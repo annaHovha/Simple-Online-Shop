@@ -15,11 +15,11 @@ switch ($action) {
         break;
     case 'addProduct':
         $productController = new ProductController();
-        $productController->addProduct($_POST['productName'], $_POST['productDesc'], $_POST['productPrice'], $_POST['productImage']);
+        $productController->addProduct();
         break;
     case 'updateProduct':
         $productController = new ProductController();
-        $productController->updateProduct($_POST['id'], $_POST['productName'], $_POST['productDesc'], $_POST['productPrice'], $_POST['productImage']);
+        $productController->updateProduct();
         break;
     case 'deleteProduct':
         $productController = new ProductController();
@@ -31,8 +31,7 @@ switch ($action) {
         break;
     default:
         $productController = new ProductController();
-        $products = $productController->getAllProducts();
-        require_once 'Views/adminView.php';
+        $productController->getAllProducts();
         break;
 }
 

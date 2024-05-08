@@ -27,7 +27,7 @@
                 <td class="align-middle"><?= $product['name'] ?></td>
                 <td class="align-middle"><?= $product['description'] ?></td>
                 <td class="align-middle"><?= $product['price'] ?></td>
-                <td class="align-middle"><img src="<?= $product['image_path'] ?>" alt="Product Image" class="product-image"></td>
+                <td class="align-middle"><img src="<?= $product['image_path'] ?>" alt="Product Image" class="product-image" style="max-width: 200px; max-height: 200px;"></td>
                 <td class="align-middle">
                     <a href="index.php?action=editProduct&id=<?= $product['id']; ?>" class="btn btn-success">Edit</a>
                 </td>

@@ -15,10 +15,10 @@ switch ($action) {
         break;
     case 'placeOrder':
         $userController = new UserController();
-        $userController->placeOrder($_POST['customerInfo'] , $_POST['deliveryAddress'], $_POST['userPhone']);
+        $userController->placeOrder();
         break;
     default:
         $userController = new UserController();
-        $products = $userController->displayProducts();
-        require_once 'Views/UserView.php';
+        $userController->displayProducts();
+        break;
 }

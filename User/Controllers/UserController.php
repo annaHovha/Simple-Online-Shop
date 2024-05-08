@@ -4,7 +4,8 @@ class UserController
     public function displayProducts()
     {
         $userModel = UserModel::getInstance();
-        return $userModel->getAllProducts();
+        $products = $userModel->getAllProducts();
+        include 'Views/UserView.php';
     }
 
     public function getProductForCart()
@@ -21,9 +22,13 @@ class UserController
         }
     }
 
-    public function placeOrder($customerInfo, $deliveryAddress, $userPhone)
+    public function placeOrder()
     {
         $userModel = UserModel::getInstance();
+
+        $customerInfo = $_POST['customerInfo'];
+        $deliveryAddress = $_POST['deliveryAddress'];
+        $userPhone = $_POST['userPhone'];
 
         $cartTotal = 0;
         if (isset($_SESSION['cart'])) {
