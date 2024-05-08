@@ -26,9 +26,9 @@ class UserController
     {
         $userModel = UserModel::getInstance();
 
-        $customerInfo = $_POST['customerInfo'];
-        $deliveryAddress = $_POST['deliveryAddress'];
-        $userPhone = $_POST['userPhone'];
+        $customerInfo = $_POST['customerInfo'] ?? null;
+        $deliveryAddress = $_POST['deliveryAddress'] ?? null;
+        $userPhone = $_POST['userPhone'] ?? null;
 
         $cartTotal = 0;
         if (isset($_SESSION['cart'])) {
